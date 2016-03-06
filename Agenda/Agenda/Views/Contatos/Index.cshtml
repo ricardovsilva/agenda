@@ -1,0 +1,18 @@
+﻿<h1> Contatos </h1>
+<div id="conteudo">
+</div>
+
+<button onclick="carregarDados()">Carregar Contatos</button>
+
+<script>
+    function carregarDados() {
+        $.ajax({
+            url: "/Contatos/GetTabela",
+            complete: function (tabela) {
+                if (tabela) {
+                    $("#conteudo").html(tabela.responseText);
+                }
+            }
+        });
+    }
+</script>
